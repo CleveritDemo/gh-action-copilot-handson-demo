@@ -88,7 +88,7 @@ steps:
       node-version: 20
 ```
 
-### Step 7: Add ste to install dependencies
+### Step 7: Add step to install dependencies
 
 Comment driven development:
 
@@ -203,6 +203,14 @@ Ask to copilot chat to add a new step in the current job to upload the out direc
 
 ```
 Now, I want to use the upload artifact action to upload the out directory
+```
+
+```
+- name: Upload artifact
+  uses: actions/upload-artifact@v3
+  with:
+    name: out-directory
+    path: out
 ```
 
 ### Step 2: Create a new job to deploy our app
