@@ -229,6 +229,14 @@ Ask to copilot how to deploy to github page
 How to deploy the out directory to github page?
 ```
 
+```
+- name: Deploy to GitHub Pages
+  uses: peaceiris/actions-gh-pages@v3
+  with:
+    github_token: ${{ secrets.GITHUB_TOKEN }}
+    publish_dir: ${{ inputs.publish_dir }}
+```
+
 ## Create a reusable workflow.
 
 ### Step 1: add a reusable workflow
