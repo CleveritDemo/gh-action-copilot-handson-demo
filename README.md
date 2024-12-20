@@ -1,10 +1,10 @@
-### Activities
+### 💻 Activities
 
 - GitHub Actions are Easy with GitHub Copilot!
 - Deploy to GitHub Pages with GitHub Actions and Copilot.
 - Create a reusable workflow.
 
-### General Objectives:
+### 🎯General Objective:
 
 - Become familiar with using GitHub Copilot to create automated workflows in GitHub Actions:
 - Automate the development and deployment lifecycle of a Next.js application using GitHub Actions
@@ -22,7 +22,7 @@
 By the end of the hands-on session, you should have a fully functional CI/CD pipeline that handles everything from dependency installation to deploying the application on GitHub Pages.
 Additionally, you will have learned how to leverage GitHub Copilot to accelerate the setup of workflows in GitHub Actions and how to integrate security tools into the process.
 
-### Step 1: Clone the Repository
+### Step 1: Clone the Repository 🚀
 
 ### Step 2: Create a New Repository
 
@@ -43,10 +43,12 @@ gh copilot suggest "how to add a new remote to github repository"
 
 Ask to copilot Chat
 
+👤 Prompt:
 ```
 @workspace I want to create a basic github workflow called handson that trigger on every push to main branch. I just want the trigger step
 ```
 
+🤖 Copilot Answer:
 ```
 name: handson
 
@@ -60,10 +62,12 @@ on:
 
 Ask to copilot to define a basic job
 
+👤 Prompt:
 ```
 #file:handson.yml define a job ci without steps, use ubuntu-latest as runner
 ```
 
+🤖 Copilot Answer:
 ```
 jobs:
   ci:
@@ -73,10 +77,12 @@ jobs:
 
 ### Step 6: Checkout Code and Setup Node
 
+👤 Prompt:
 ```
 Add steps to checkout code and setup node, use node version 20
 ```
 
+🤖 Copilot Answer:
 ```
 steps:
   - name: Checkout code
@@ -90,12 +96,14 @@ steps:
 
 ### Step 7: Add step to install dependencies
 
-Comment driven development:
+**Comment driven development**:
 
+👤 Prompt:
 ```
 Add step to install dependencies
 ```
 
+🤖 Copilot Answer:
 ```
 - name: Install dependencies
   run: npm install
@@ -103,10 +111,12 @@ Add step to install dependencies
 
 ### Step 8: Implement CodeQl to code analisis and find vulnerabilities
 
+👤 Prompt:
 ```
-I want to implement a step to code analisis and find vulnerabilities, use codeQl and Javascript/TypeScript as target languages and explain me the new steps
+@workspace I want to implement a step to code analisis and find vulnerabilities, use codeQl and Javascript/TypeScript as target languages and explain me the new steps
 ```
 
+🤖 Copilot Answer:
 ```
 - name: Initialize CodeQL
   uses: github/codeql-action/init@v2
@@ -127,7 +137,10 @@ Reference:
 
 ### Step 9: Implement TruffleHog to Find Leaked Credentials
 
-Now, I want to implement a step to find possible leaked credentials, use trufflesecurity/trufflehog with the main version, only-verified as extra_args, head with the current ref name
+👤 Prompt:
+```
+@workspace Now, I want to implement a step to find possible leaked credentials, use trufflesecurity/trufflehog with the main version, only-verified as extra_args, head with the current ref name
+```
 
 In case that you have some errors with the version use:
 
@@ -148,18 +161,20 @@ Reference:
 
 Ask to copilot chat or use comment driven development to add another step to run tests
 
-Copilot chat:
+
+**Copilot chat**:
+
+👤 Prompt:
+```
+@workspace Add another step to run tests with npm run
+```
+
+**Comment driven development\***:
 
 ```
 Add another step to run tests with npm run
 ```
-
-Comment driven development\*:
-
-```
-Add another step to run tests with npm run
-```
-
+🤖 Copilot Answer:
 ```
 - name: Run tests
   run: npm run test
@@ -167,18 +182,20 @@ Add another step to run tests with npm run
 
 ### Step 11: Add step to build
 
-Copilot chat:
+**Copilot chat**:
+
+👤 Prompt:
+```
+Add another step to run the build with npm run
+```
+
+**Comment driven development\***:
 
 ```
 Add another step to run the build with npm run
 ```
 
-Comment driven development\*:
-
-```
-Add another step to run the build with npm run
-```
-
+🤖 Copilot Answer:
 ```
 - name: Build
   run: npm run build
@@ -201,10 +218,12 @@ Before continue with the next steps, please open the 'next.config.mjs' file and 
 
 Ask to copilot chat to add a new step in the current job to upload the out directory using upload artifact action
 
+👤 Prompt:
 ```
-Now, I want to use the upload artifact action to upload the out directory
+@workspace Now, I want to use the upload artifact action to upload the out directory
 ```
 
+🤖 Copilot Answer:
 ```
 - name: Upload artifact
   uses: actions/upload-artifact@v3
@@ -217,18 +236,21 @@ Now, I want to use the upload artifact action to upload the out directory
 
 Ask to copilot chat to create another job called deploy and to add a step to dwonload the previous uploaded artifact
 
+👤 Prompt:
 ```
-How to create another job called deploy with only a step to download an artifact and the output should be 'out'
+@workspace How to create another job called deploy with only a step to download an artifact and the output should be 'out'
 ```
 
 ### Step 3: Add step to deploy to GitHub Pages
 
 Ask to copilot how to deploy to github page
 
+👤 Prompt:
 ```
-How to deploy the out directory to github page?
+@workspace How to deploy the out directory to github page?
 ```
 
+🤖 Copilot Answer:
 ```
 - name: Deploy to GitHub Pages
   uses: peaceiris/actions-gh-pages@v3
@@ -243,10 +265,12 @@ How to deploy the out directory to github page?
 
 Ask to copilot, to create a reusable workflow for the step deploy to github page
 
+👤 Prompt:
 ```
-how can I create a reusable workflow for the step Deploy to github page, the reusable workflow must require the publish dir as input. Just give me the reusable workflow
+@workspace how can I create a reusable workflow for the step Deploy to github page, the reusable workflow must require the publish dir as input. Just give me the reusable workflow
 ```
 
+🤖 Copilot Answer:
 ```
 name: Deploy to GitHub Pages
 
@@ -276,12 +300,14 @@ jobs:
 
 Ask to copilot to rename the deploy job and create another job to use rereusable workflow
 
+👤 Prompt:
 ```
-Rename the deploy job, to download artifact. Then create another job after the download artifact job and use the reusable workflow #file:deploy.yml
+@workspace Rename the deploy job, to download artifact. Then create another job after the download artifact job and use the reusable workflow #file:deploy.yml
 ```
 
 Should give us an answer like this:
 
+🤖 Copilot Answer:
 ```
   deploy:
     needs: download-artifact
