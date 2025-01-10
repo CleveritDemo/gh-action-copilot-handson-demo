@@ -4,6 +4,8 @@
 - Deploy to GitHub Pages with GitHub Actions and Copilot.
 - Create a reusable workflow.
 
+![APP Preview](./image.png)
+
 ### 🎯General Objective:
 
 - Become familiar with using GitHub Copilot to create automated workflows in GitHub Actions:

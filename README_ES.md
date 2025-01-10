@@ -4,6 +4,8 @@
 - Despliega en GitHub Pages con GitHub Actions y Copilot.
 - Crea un flujo de trabajo reutilizable.
 
+![Preview de la APP](./image.png)
+
 ### 🎯Objetivo General:
 
 - Familiarizarse con el uso de GitHub Copilot para crear flujos de trabajo automatizados en GitHub Actions:
